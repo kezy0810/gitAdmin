@@ -59,6 +59,8 @@ public class AdminController {
     @RequestMapping(value = "/uploadFile",method = RequestMethod.POST)
     public void batchAddByExcel(@RequestParam("file") MultipartFile file,
                                   HttpServletResponse response){
+    	
+    	String a1111="";
         if(file.isEmpty()){
             return;
         }
