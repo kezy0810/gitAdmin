@@ -15,6 +15,8 @@
 		<typeAlias type="com.fh.entity.system.Menu" alias="Menu"/>
 		<typeAlias type="com.fh.entity.system.Dictionaries" alias="Dictionaries"/>
 		<typeAlias type="com.fh.entity.system.Department" alias="Department"/>
+		<typeAlias type="com.fh.entity.huoxing.TbAppKey" alias="tbAppKey"/>
+		<typeAlias type="com.fh.entity.huoxing.TbAppVersion" alias="tbAppVersion"/>
 		
 		<!-- 这里添加生成的实体类 -->
 		

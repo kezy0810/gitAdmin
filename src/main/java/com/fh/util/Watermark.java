@@ -5,13 +5,13 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 
 import javax.imageio.ImageIO;
 
-import com.sun.image.codec.jpeg.JPEGCodec;
-import com.sun.image.codec.jpeg.JPEGImageEncoder;
+
 
 /** 
  * 说明：图片水印处理类 （报错注意：用安装版的jdk，不要用开发工具自带的jdk）
@@ -78,6 +78,7 @@ public class Watermark {
 	            //目标文件
 	            File _file = new File(targetImg);
 	            Image src = ImageIO.read(_file);
+	            
 	            int wideth = src.getWidth(null);
 	            int height = src.getHeight(null);
 	            BufferedImage image = new BufferedImage(wideth, height,
@@ -94,9 +95,15 @@ public class Watermark {
 	            g.drawImage(src_biao, x, y, wideth_biao, height_biao, null);
 	            //水印文件结束
 	            g.dispose();
-	            FileOutputStream out = new FileOutputStream(targetImg);
-	            JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(out);
-	            encoder.encode(image);
+//	            FileOutputStream out = new FileOutputStream(targetImg);
+	            
+//	            JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(out);
+	            	            
+//	            encoder.encode(image);
+	            
+	            ByteArrayOutputStream out = new ByteArrayOutputStream();
+	            ImageIO.write(image, "jpg", out);
+	            
 	            out.close();
 	        } catch (Exception e) {
 	            e.printStackTrace();
@@ -138,9 +145,14 @@ public class Watermark {
 	            g.setFont(new Font(fontName, fontStyle, fontSize));
 	            g.drawString(pressText, x, y);
 	            g.dispose();
-	            FileOutputStream out = new FileOutputStream(targetImg);
-	            JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(out);
-	            encoder.encode(image);
+//	            FileOutputStream out = new FileOutputStream(targetImg);
+//	            JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(out);
+//	            encoder.encode(image);
+	            
+	            
+	            ByteArrayOutputStream out = new ByteArrayOutputStream();
+	            ImageIO.write(image, "jpg", out);
+	            
 	            out.close();
 	        } catch (Exception e) {
 	            System.out.println(e);

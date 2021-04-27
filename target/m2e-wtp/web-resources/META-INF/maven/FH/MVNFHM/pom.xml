@@ -13,7 +13,7 @@
 		<javax-activation.version>1.1</javax-activation.version>
 		<!-- 4.3.7 ApplicationContext-mvc.xml误报红叉，但不影响正常运行 -->
 		<!-- <spring.version>4.3.7.RELEASE</spring.version> -->
-		<spring.version>4.2.9.RELEASE</spring.version>
+		<spring.version>4.3.7.RELEASE</spring.version>
 		<mysql-connector-java.version>5.1.34</mysql-connector-java.version>
 	</properties>
 
@@ -101,6 +101,12 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>${mysql-connector-java.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.json</groupId>
+		    <artifactId>json</artifactId>
+		    <version>20180130</version>
 		</dependency>
 
 		<dependency>
@@ -508,11 +514,11 @@
 		</dependency>
 		<!-- ueditor -->
 		<dependency>
-			<groupId>ueditor</groupId>
-			<artifactId>ueditor</artifactId>
-			<version>1.0</version>
+			<groupId>com.baidu</groupId>  
+		    <artifactId>ueditor</artifactId>  
+		    <version>1.1.2</version>  
 			<scope>system</scope>
-			<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/ueditor.jar</systemPath>
+			<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/ueditor-1.1.2.jar</systemPath>
 		</dependency>
 		<!-- java_websocket -->
 		<dependency>
@@ -552,7 +558,7 @@
 		<plugins>
     <plugin>
             <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.1</version>
+            <version>3.5.1</version>
             <configuration>
                 <source>1.7</source>
                 <target>1.7</target>

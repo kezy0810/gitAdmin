@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="tbAppVersionMapper">
+    <resultMap id="resultMap" type="tbAppVersion">
+        <id column="id" property="id"/>
+        <result column="appname" property="appname"/>
+        <result column="version" property="version"/>
+        <result column="vercode" property="vercode"/>
+        <result column="maketime" property="maketime"/>
+        <result column="modifytime" property="modifytime"/>
+        <result column="downurl" property="downurl"/>
+        <result column="description" property="description"/>
+        <result column="filepath" property="filepath"/>
+        <result column="filename" property="filename"/>
+        <result column="r1" property="r1"/>
+        <result column="r2" property="r2"/>
+        <result column="r3" property="r3"/>
+        <result column="r4" property="r4"/>
+        <result column="r5" property="r5"/>
+    </resultMap>
+
+    <sql id="baseColume">
+        id,appname,version,vercode,maketime,modifytime,downurl,description,filepath,filename,r1,r2,r3,r4,r5
+    </sql>
+
+    <update id="updateAppVersion" parameterType="java.util.Map">
+        update tb_app_version set version=#{version},filename=#{fileName},modifytime=#{modifyTime} where appname=#{appName}
+    </update>
+
+    <select id="findByAppName" parameterType="string" resultType="tbAppVersion">
+        select <include refid="baseColume"/> from tb_app_version where appname=#{appName}
+    </select>
+</mapper>
