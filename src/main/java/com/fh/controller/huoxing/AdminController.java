@@ -60,7 +60,7 @@ public class AdminController {
     public void batchAddByExcel(@RequestParam("file") MultipartFile file,
                                   HttpServletResponse response){
     	
-    	String a1111="";
+//    	String a1111="";
         if(file.isEmpty()){
             return;
         }
